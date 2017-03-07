@@ -1,7 +1,7 @@
 .PHONY: all push
 
 USER="501stalpha1"
-ifeq ($(shell uname -m), "i686")
+ifeq ($(shell uname -m), i686)
   PLATFORM="686"
 else
   PLATFORM="amd64"
