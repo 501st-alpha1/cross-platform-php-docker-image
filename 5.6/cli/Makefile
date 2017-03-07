@@ -14,6 +14,7 @@ all: .last-docker-build
 
 .last-docker-build: Dockerfile
 	docker build -t "$(USER)/php:$(FULL_VERSION)-cli-$(PLATFORM)" .
+	docker tag "$(USER)/php:$(FULL_VERSION)-cli-$(PLATFORM)" "$(USER)/php:$(MINOR_VERSION)-cli-$(PLATFORM)"
 	docker tag "$(USER)/php:$(FULL_VERSION)-cli-$(PLATFORM)" "$(USER)/php:$(MAJOR_VERSION)-cli-$(PLATFORM)"
 	docker tag "$(USER)/php:$(FULL_VERSION)-cli-$(PLATFORM)" "$(USER)/php:latest-$(PLATFORM)"
 	@touch $@
