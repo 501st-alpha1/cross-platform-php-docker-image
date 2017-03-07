@@ -1,0 +1,12 @@
+image: 501stalpha1/php:5.6.30
+manifests:
+  -
+    image: 501stalpha1/php:5.6.30-cli-amd64
+    platform:
+      architecture: amd64
+      os: linux
+  -
+    image: 501stalpha1/php:5.6.30-cli-386
+    platform:
+      architecture: 386
+      os: linux
