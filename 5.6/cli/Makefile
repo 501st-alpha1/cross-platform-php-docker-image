@@ -23,7 +23,10 @@ push: .last-docker-push
 
 .last-docker-push: .last-docker-build
 	docker push "$(USER)/php:$(FULL_VERSION)-cli-$(PLATFORM)"
+	manifest-tool push from-spec ./manifest-full.yml
 	docker push "$(USER)/php:$(MINOR_VERSION)-cli-$(PLATFORM)"
+	manifest-tool push from-spec ./manifest-minor.yml
 	docker push "$(USER)/php:$(MAJOR_VERSION)-cli-$(PLATFORM)"
+	manifest-tool push from-spec ./manifest-major.yml
 	docker push "$(USER)/php:latest-$(PLATFORM)"
 	@touch $@
