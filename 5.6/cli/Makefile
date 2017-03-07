@@ -16,7 +16,7 @@ all: .last-docker-build
 	docker build -t "$(USER)/php:$(FULL_VERSION)-cli-$(PLATFORM)" .
 	docker tag "$(USER)/php:$(FULL_VERSION)-cli-$(PLATFORM)" "$(USER)/php:$(MINOR_VERSION)-cli-$(PLATFORM)"
 	docker tag "$(USER)/php:$(FULL_VERSION)-cli-$(PLATFORM)" "$(USER)/php:$(MAJOR_VERSION)-cli-$(PLATFORM)"
-	docker tag "$(USER)/php:$(FULL_VERSION)-cli-$(PLATFORM)" "$(USER)/php:latest-$(PLATFORM)"
+	docker tag "$(USER)/php:$(FULL_VERSION)-cli-$(PLATFORM)" "$(USER)/php:cli-$(PLATFORM)"
 	@touch $@
 
 push: .last-docker-push
@@ -28,5 +28,5 @@ push: .last-docker-push
 	manifest-tool push from-spec ./manifest-minor.yml
 	docker push "$(USER)/php:$(MAJOR_VERSION)-cli-$(PLATFORM)"
 	manifest-tool push from-spec ./manifest-major.yml
-	docker push "$(USER)/php:latest-$(PLATFORM)"
+	docker push "$(USER)/php:cli-$(PLATFORM)"
 	@touch $@
