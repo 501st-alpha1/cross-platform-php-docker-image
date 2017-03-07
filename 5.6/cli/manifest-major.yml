@@ -1,4 +1,4 @@
-image: 501stalpha1/php:5
+image: 501stalpha1/php:5-cli
 manifests:
   -
     image: 501stalpha1/php:5-cli-amd64
