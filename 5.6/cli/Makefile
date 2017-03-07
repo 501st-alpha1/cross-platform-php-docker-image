@@ -6,6 +6,9 @@ ifeq ($(shell uname -m), "i686")
 else
   PLATFORM="amd64"
 endif
+FULL_VERSION="5.6.30"
+MINOR_VERSION=$(shell echo $(FULL_VERSION) | cut -d '.' -f -2)
+MAJOR_VERSION=$(shell echo $(FULL_VERSION) | cut -d '.' -f 1)
 
 all: .last-docker-build
 
