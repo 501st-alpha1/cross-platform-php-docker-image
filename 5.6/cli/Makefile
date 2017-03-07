@@ -13,7 +13,7 @@ MAJOR_VERSION=$(shell echo $(FULL_VERSION) | cut -d '.' -f 1)
 all: .last-docker-build
 
 .last-docker-build: Dockerfile
-	docker build -t "$(USER)/php:5.6-cli-$(PLATFORM)" .
-	docker tag "$(USER)/php:5.6-cli-$(PLATFORM)" "$(USER)/php:5-cli-$(PLATFORM)"
-	docker tag "$(USER)/php:5.6-cli-$(PLATFORM)" "$(USER)/php:latest-$(PLATFORM)"
+	docker build -t "$(USER)/php:$(FULL_VERSION)-cli-$(PLATFORM)" .
+	docker tag "$(USER)/php:$(FULL_VERSION)-cli-$(PLATFORM)" "$(USER)/php:$(MAJOR_VERSION)-cli-$(PLATFORM)"
+	docker tag "$(USER)/php:$(FULL_VERSION)-cli-$(PLATFORM)" "$(USER)/php:latest-$(PLATFORM)"
 	@touch $@
