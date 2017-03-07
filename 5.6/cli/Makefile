@@ -2,7 +2,7 @@
 
 USER="501stalpha1"
 ifeq ($(shell uname -m), i686)
-  PLATFORM="686"
+  PLATFORM="386"
 else
   PLATFORM="amd64"
 endif
